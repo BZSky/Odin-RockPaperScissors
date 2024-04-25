@@ -79,16 +79,15 @@ function playRound() {
 /*
 Match function 5 rounds
 0. declare results array
-1. Loop round function 5 times
+Removed: Loop round function 5 times
 2. Push results to an array
 3. Evaluate array to get winner
 4. Show winner
 */
 function playGame() {
   const gameResults = [];
-  while (gameResults.length < 5) {
-    gameResults.push(playRound());
-  }
+  gameResults.push(playRound());
+
   let result = gameResults.reduce(function (points, count) {
     if (count in points) {
       points[count]++;
@@ -107,4 +106,33 @@ function playGame() {
   }
 }
 
-playGame();
+const btnRock = document.createElement("button");
+btnRock.id = "rock";
+btnRock.textContent = "Rock";
+
+const btnPaper = document.createElement("button");
+btnPaper.id = "paper";
+btnPaper.textContent = "Paper";
+
+const btnScissors = document.createElement("button");
+btnScissors.id = "scissors";
+btnScissors.textContent = "Scissors";
+
+let controls = document.querySelector(".controls");
+controls.append(btnRock, btnPaper, btnScissors);
+
+controls.addEventListener("click", (event) => {
+  let target = event.target;
+
+  switch (target.id) {
+    case "rock":
+      console.log("Rock control was clicked");
+      break;
+    case "paper":
+      console.log("Paper control was clicked");
+      break;
+    case "scissors":
+      console.log("Scissors control was clicked");
+      break;
+  }
+});
