@@ -108,15 +108,12 @@ function playGame() {
 
 const btnRock = document.createElement("button");
 btnRock.id = "rock";
-btnRock.textContent = "Rock";
 
 const btnPaper = document.createElement("button");
 btnPaper.id = "paper";
-btnPaper.textContent = "Paper";
 
 const btnScissors = document.createElement("button");
 btnScissors.id = "scissors";
-btnScissors.textContent = "Scissors";
 
 let controls = document.querySelector(".controls");
 controls.append(btnRock, btnPaper, btnScissors);
